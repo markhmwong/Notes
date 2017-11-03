@@ -82,11 +82,83 @@ print(spaApp)
 print(spaApp.title)
 print(spaApp.0)
 
+//  Optionals
+//  Used when a value may be absent and allows for our constant or variable to have no value.
+//  It may contain a value of type or it may be nil
+let possibleNumber = "123"
+let convertedNumber: Int? = Int(possibleNumber)
+print(convertedNumber) //Optional(123)
+//  Nil
 
+var noValue: Int? = 123
+noValue = nil
+var automaticNilValue: String?
+print(automaticNilValue)
 
-//value? may contain no value at all
+//  Forced unwrapping
+let possibleNumberr = "123"
+let convertedNumberr: Int? = Int(possibleNumberr)
+print(convertedNumberr!) //123
+
+//  Optional Binding
+//  Used to check whether an optional contains a value.
+
+if let x = Int(possibleNumber) {
+    print("\(x)")
+}
+else {
+    print("\"\(x)\" not a number")
+}
+
+//  we can also use a comma to evaluated multiple optionals
+if let firstNumber = Int("4"), let secondNumber = Int("42"), firstNumber < secondNumber && secondNumber < 100 {
+    print("\(firstNumber) < \(secondNumber) < 100")
+}
+
+//  Implicity Unwrapped Optionals
+//  If we use implict unwrapping, there isn't a need to unwrap the string after the variable has been declared as an optional. Using an exclamation mark during declaration (on the type), it allows us to assume the variable as a String without additional annonatation.
+
+//I.e. We can do this
+let assumedString: String! = "An implicity unwrapped optional string";
+let implicitString: String = assumedString
+//rather than
+let possibleString: String? = "An optional string."
+let forcedString: String = possibleString!
+// for conditionals, we can still allow for the implicitly unwrapped optional to be treated as a standard optional variable.
+
+//  Error handling - try catch. Similar to Java
+//  also read up on try, try?, try! T_T https://medium.com/@JoyceMatos/error-handling-in-swift-3-try-try-and-try-f19705e32ff4
+
+enum DivisionError: Error {
+    case DivideByZero
+}
+
+func divide(num1: Float, num2: Float) throws -> Float {
+    guard num2 != 0.0 else {
+        throw DivisionError.DivideByZero
+    }
+    return num1 / num2
+}
+
+do {
+    try divide(num1: 4, num2: 0)
+} catch is DivisionError {
+    //} catch DivisionError.DivideByZero
+    print("can't divide by zero")
+    let errorStr = DivisionError.DivideByZero;
+    print(errorStr)
+}
+
+//  Assertions
+//  Assertions are used for debugging to quickly check your code for errors
 let x = 14;
 assert (x >= 13, "A teenager has to be above or equal to 13");
+
+//  Enforcing Preconditions
+//  Preconditions are used in the case where the value has a potential to be false. Great to use if the client has given valid parameters
+// In the implementation of a subscript...
+precondition(index > 0, "Index must be greater than zero.")
+
 
 
 //declaring a closure
