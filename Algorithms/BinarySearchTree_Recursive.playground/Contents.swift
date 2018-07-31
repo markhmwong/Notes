@@ -108,9 +108,32 @@ class BinaryTree {
         guard let target = targetNode else {
             return
         }
-        preOrderTraversal(targetNode:target.leftChild)
-        preOrderTraversal(targetNode:target.rightChild)
+        postOrderTraversal(targetNode:target.leftChild)
+        postOrderTraversal(targetNode:target.rightChild)
         print(target.key)
+    }
+    
+    func findNode(key: Int, targetNode: Node?) -> Node? {
+        
+        guard var target = targetNode else {
+            return nil
+        }
+        //return if we're successful
+        
+        if target.key == key {
+            print(target.key)
+            return target
+        }
+        else {
+            //if not found we continue to search left or right depending on the comparison
+            if key < target.key {
+                //left side
+                return findNode(key: key, targetNode: target.leftChild)
+            }
+            else {
+                return findNode(key: key, targetNode: target.rightChild)
+            }
+        }
     }
     
     func printNode(node: Node?) {
@@ -127,5 +150,17 @@ bst.insertNodeRecursively(newNode: Node(value: "Secretary", key: 30))
 bst.insertNodeRecursively(newNode: Node(value: "Sales Maanger", key: 75))
 bst.insertNodeRecursively(newNode: Node(value: "Salesman 1", key: 85))
 //bst.inOrderTraversal(targetNode: bst.rootNode)
-bst.preOrderTraversal(targetNode: bst.rootNode)
+//print("\n")
+//bst.preOrderTraversal(targetNode: bst.rootNode)
+//print("\n")
 //bst.postOrderTraversal(targetNode: bst.rootNode)
+//print("\n")
+if let myNode = bst.findNode(key: 74, targetNode: bst.rootNode) as? Node {
+    print("Node Found")
+    print(myNode.key)
+    print(myNode.value)
+}
+else {
+    print("Node not found")
+}
+
