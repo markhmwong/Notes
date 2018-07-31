@@ -1,0 +1,6 @@
+A form of tree.
+Only ever has 2 children
+Left child is less than the parent and the right child
+Right child is greater than the parent and the left child
+
+Can add/search/remove items quickly
