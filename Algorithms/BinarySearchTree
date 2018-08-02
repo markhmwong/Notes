@@ -1,6 +1,28 @@
+Why finding the minimum node is important to finding a successor node.
+
+During my revision of Binary Search Trees, it seemed certain youtube videos did not cover this well enough. After a certain time, juggling different conditions, it didn't seem their implementation worked for all cases, only covering specific ones. This lead me to move to wiki to search for their approach which was to find the minimum node.
+
+Now why should we find the minimum node. It's actually an amazing approach which exploits the Binary Tree's structure and node formation. Having only two nodes makes the deletion simpler to reorganise. By using the minimum value, it is deterministic.
+
+1. The minimum value/successor node will always be a left node (child). Left nodes are always lower than the right.
+2. The successor's children will only have a right node. A right node of the successor child would be greater than the parent.
+3. The successor's children will not have a left node. NULL. We know this because the successor is already the minimum value
+4. -1 +1 for the parent successor node depending which side the successor node was on
+
+Notes
 A form of tree.
 Only ever has 2 children
 Left child is less than the parent and the right child
 Right child is greater than the parent and the left child
 
 Can add/search/remove items quickly
+
+Removing
+is the node a root node?
+  if it is then we use the right child and use that as the root node
+  we then take the left child of the root node and put that into the new root node
+
+removing subtrees
+  find the target node
+  the right child will be the new replacement node of the target node
+  link the left child of the target node to the replacement node
