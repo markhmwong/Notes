@@ -140,15 +140,9 @@ class BinaryTree {
     
     /*
         Remove Node
+        Should be re-written to be recursive
     */
     func removeNode(key: Int) -> Bool { //change return type
-        
-//        if let mySearchedNode = findNodeWithSide(key: key, targetNode: self.rootNode!) {
-//            print(mySearchedNode.isALeftChild)
-//            print(mySearchedNode.targetNode?.key)
-//            print(mySearchedNode.targetNode?.value)
-//        }
-        
         var isALeftChild = true
         var pNode: Node? //parent Node
 
