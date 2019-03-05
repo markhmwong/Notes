@@ -1,0 +1,14 @@
+Associative array implementation
+  - Uses a hash function to discover the index to a value, possibly that of an array
+  - Collisions between keys are possible. This is when the hash function computes a key that already exists.
+    Solving Collisions
+      collisions can be reduced by having a better hash function
+      chaining - a linked list/array or a collection of elements at each key
+      open addressing
+        linear probing - a strategy used when we have more values than indexes. It works by using the next available position in the array.
+      double hashing - uses two hashing functions. The second hashing function is only used when the key from the initial hashing function is not vacant.
+      2-choice hashing
+      hopscotch hashing
+      robin hood hashing
+      cuckoo hashing
+      coalesced hashing

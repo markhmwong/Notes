@@ -1,0 +1,13 @@
+List
+- An ordered collection. In sequence, values not placed randomly or out of order
+- Elements can be accessed via their index
+- Can contain duplicate elements
+
+Set
+- Can't container duplicate elements. A pair of elements would never be equal
+- At most one null element
+
+Map
+- key/value pair.
+- Keys cannot contain duplicates
+- Can map to one value
