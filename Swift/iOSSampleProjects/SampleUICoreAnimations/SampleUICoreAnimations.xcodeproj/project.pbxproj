@@ -14,6 +14,9 @@
 		4DA1567B2143B5E000BD0FDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA156792143B5E000BD0FDE /* LaunchScreen.storyboard */; };
 		4DA156862143B5E000BD0FDE /* SampleUICoreAnimationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA156852143B5E000BD0FDE /* SampleUICoreAnimationsTests.swift */; };
 		4DA156912143B5E000BD0FDE /* SampleUICoreAnimationsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA156902143B5E000BD0FDE /* SampleUICoreAnimationsUITests.swift */; };
+		4DBBD4A221451CD200123CE0 /* DotShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBD4A121451CD200123CE0 /* DotShape.swift */; };
+		4DBBD4A4214577B000123CE0 /* BasicShapeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBD4A3214577B000123CE0 /* BasicShapeLayer.swift */; };
+		4DBBD4A6214577EE00123CE0 /* LineShapeA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBD4A5214577EE00123CE0 /* LineShapeA.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		4DA1568C2143B5E000BD0FDE /* SampleUICoreAnimationsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleUICoreAnimationsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA156902143B5E000BD0FDE /* SampleUICoreAnimationsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleUICoreAnimationsUITests.swift; sourceTree = "<group>"; };
 		4DA156922143B5E000BD0FDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DBBD4A121451CD200123CE0 /* DotShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotShape.swift; sourceTree = "<group>"; };
+		4DBBD4A3214577B000123CE0 /* BasicShapeLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicShapeLayer.swift; sourceTree = "<group>"; };
+		4DBBD4A5214577EE00123CE0 /* LineShapeA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineShapeA.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,9 @@
 			children = (
 				4DA156702143B5DF00BD0FDE /* AppDelegate.swift */,
 				4DA156722143B5DF00BD0FDE /* ViewController.swift */,
+				4DBBD4A3214577B000123CE0 /* BasicShapeLayer.swift */,
+				4DBBD4A5214577EE00123CE0 /* LineShapeA.swift */,
+				4DBBD4A121451CD200123CE0 /* DotShape.swift */,
 				4DA156742143B5DF00BD0FDE /* Main.storyboard */,
 				4DA156772143B5E000BD0FDE /* Assets.xcassets */,
 				4DA156792143B5E000BD0FDE /* LaunchScreen.storyboard */,
@@ -256,7 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DBBD4A6214577EE00123CE0 /* LineShapeA.swift in Sources */,
 				4DA156732143B5DF00BD0FDE /* ViewController.swift in Sources */,
+				4DBBD4A4214577B000123CE0 /* BasicShapeLayer.swift in Sources */,
+				4DBBD4A221451CD200123CE0 /* DotShape.swift in Sources */,
 				4DA156712143B5DF00BD0FDE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
