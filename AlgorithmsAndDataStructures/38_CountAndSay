@@ -1,0 +1,33 @@
+class Solution {
+    public String countAndSay(int n) {
+
+        String str = "1";
+
+        for (int i = 1; i < n; i++) {
+            StringBuilder sb = new StringBuilder();
+            char c = str.charAt(0);
+            int count = 1;
+
+            //build the string
+            for (int j = 1; j < str.length(); j++) {
+
+                if (c != str.charAt(j)) {
+                    sb.append(count);
+                    sb.append(c);
+
+                    //update for next loop
+                    c = str.charAt(j);
+                    count = 1;
+                } else {
+                    count++;
+                }
+            }
+            sb.append(count);
+            sb.append(c);
+            str = sb.toString();
+
+        }
+
+        return str;
+    }
+}

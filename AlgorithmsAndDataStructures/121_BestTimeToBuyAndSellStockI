@@ -1,0 +1,30 @@
+class Solution {
+    public int maxProfit(int[] prices) {
+
+        if (prices.length == 0) {
+            return 0;
+        }
+
+        int buy = prices[0];
+        int tempMax = 0;
+        int maxProfitSoFar = 0;
+        for (int i = 1; i < prices.length; i++) {
+
+            int sell = prices[i];
+            int profit = sell - prices[i - 1];
+            tempMax = tempMax + profit;
+
+            tempMax = Math.max(0, tempMax);
+            maxProfitSoFar = Math.max(tempMax, maxProfitSoFar);
+
+        }
+        return maxProfitSoFar;
+    }
+}
+
+/*
+ 1 ms, faster than 92.54% of java
+
+
+
+*/

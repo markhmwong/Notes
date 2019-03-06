@@ -1,0 +1,22 @@
+class Solution {
+    public int removeElement(int[] nums, int val) {
+        int rI = 0;
+        for (int i = 0; i < nums.length; i++) {
+            //swap
+            if (nums[i] != val) {
+                nums[rI] = nums[i];
+                rI = rI + 1;
+            }
+        }
+        return rI;
+    }
+}
+
+/*
+
+Time complexity
+O(N) - one pass through the array.
+space complexity
+O(1) - the space does not increase with size of the array N. It's constant.
+
+*/

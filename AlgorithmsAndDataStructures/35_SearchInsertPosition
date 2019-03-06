@@ -1,0 +1,59 @@
+class Solution {
+    public int searchInsert(int[] nums, int target) {
+        int index = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            int currNum = nums[i];
+
+            if (target > nums[i]) {
+                index++;
+            }
+        }
+
+        return index;
+    }
+}
+
+/*
+2ms, 39.7mb
+
+Time complexity O(N) - N representing the length of the array because we may have to traverse the entire length.
+
+Space complexity O(1) - constant space. there isn't additional space created during the running time. We only keep track of the index position of where the number should be inserted.
+
+*/
+/* Binary Search solution */
+class Solution {
+    public int searchInsert(int[] nums, int target) {
+
+        int halfIndex = 0;
+        int startingIndex = 0;
+        int endIndex = nums.length - 1;
+
+        while ( startingIndex <= endIndex ) {
+
+            halfIndex = startingIndex + (endIndex - startingIndex) / 2;
+
+            if (nums[halfIndex] == target) {
+                return halfIndex;
+            }
+
+
+
+            if (nums[halfIndex] <= target) {
+                startingIndex = halfIndex + 1;
+            } else {
+                endIndex = halfIndex - 1;
+            }
+        }
+
+        return startingIndex;
+    }
+}
+
+/*
+
+Time Complexity O( log2(N) ) because we're dividing by 2.
+
+Space Complexity O(1) constant space.
+*/
