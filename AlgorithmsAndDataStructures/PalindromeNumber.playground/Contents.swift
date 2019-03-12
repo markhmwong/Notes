@@ -13,6 +13,7 @@ class Solution {
         //push and pop
         //passed the middle of the number when the value is less than the poppedNumber (reversed)
         
+        // how do we deal with the negative? The for loop condition immediately checks for a negative number.
         while (rev < value) {
             
             // pop = value % 10
@@ -21,7 +22,7 @@ class Solution {
             value = value / 10
 
         }
-
+        print(rev)
         if (value == (rev / 10)) { //odd
             return true
         }
@@ -36,7 +37,7 @@ class Solution {
 
 
 let s = Solution()
-print(s.isPalindrome(0))
+print(s.isPalindrome(-121))
 
 /*
 Algorithm

@@ -7,29 +7,43 @@ class Solution {
             return s
         }
         
-        var rowArr: [String] = []
-        for _ in 0...numRows {
-            rowArr.append("")
-        }
-        var index = 0
-        var step = -1
-        for char in s {
-            rowArr[index] = "\(rowArr[index])\(String(char))"
-
-            if (index == 0 || index == numRows - 1) {
-                step = -step
+//        var rowArr: [String] = []
+//        for _ in 0...numRows {
+//            rowArr.append("")
+//        }
+//        var index = 0
+//        var step = -1
+//        for char in s {
+//            rowArr[index] = "\(rowArr[index])\(String(char))"
+//
+//            if (index == 0 || index == numRows - 1) {
+//                step = -step
+//            }
+//            index = index + step
+//
+//        }
+//        return rowArr.reduce("") { (result, nextStr) -> String in
+//            return result + nextStr
+//        }
+        
+        var zigzag: [String] = [""]
+        for (index, char) in s.enumerated() {
+            
+            if (zigzag[index].isEmpty) {
+                zigzag.append("")
             }
-            index = index + step
-
+            
+            print(zigzag[index])
+            let str = "\(zigzag[index])\(char)"
+            zigzag[index] = str
         }
-        return rowArr.reduce("") { (result, nextStr) -> String in
-            return result + nextStr
-        }
+        print(zigzag)
+        return zigzag.reduce("", +)
     }
 }
 
 let s = Solution()
-s.convert("ABC", 1)
+s.convert("PAYPALISHIRING", 3)
 
 /*
  Runtime 108ms memory 19.6MB

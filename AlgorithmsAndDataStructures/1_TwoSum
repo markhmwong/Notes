@@ -1,0 +1,24 @@
+class Solution {
+    func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+        //complement
+        //map out the complement
+
+        var complementDict: [Int: Int] = [:]
+
+        for index in stride(from: 0, to: nums.count, by: 1) {
+            complementDict[nums[index]] = index
+        }
+
+        for i in stride(from: 0, to: nums.count, by:1) {
+            let complement = target - nums[i]
+
+            if (complementDict.keys.contains(complement) && complementDict[complement] != i) {
+                guard let complementIndex = complementDict[complement] else {
+                    return []
+                }
+                return [i, complementIndex]
+            }
+        }
+        return []
+    }
+}
